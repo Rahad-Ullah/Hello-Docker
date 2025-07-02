@@ -4,11 +4,13 @@ import { errorlogger, logger } from "./app/src/shared/logger";
 
 let server: Server;
 
+const PORT = process.env.PORT || 5000;
+
 async function main() {
   try {
-    server = app.listen(process.env.PORT, () => {
-      console.log(`app is listening on port ${process.env.PORT}`);
-      logger.info(`app is listening on port ${process.env.PORT}`);
+    server = app.listen(PORT, () => {
+      console.log(`app is listening on port ${PORT}`);
+      logger.info(`app is listening on port ${PORT}`);
     });
   } catch (err) {
     console.log(err);
